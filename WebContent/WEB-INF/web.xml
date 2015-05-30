@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <servlet-name>emp-controller</servlet-name>
+    <servlet-class>employeeController.Controller</servlet-class>
+    <init-param>
+      <param-name>jdbcDriverName</param-name>
+      <param-value> com.mysql.jdbc.Driver  </param-value>
+    </init-param>
+    <init-param>
+      <param-name>jdbcURL</param-name>
+      <param-value> jdbc:mysql:///test     </param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>cust-controller</servlet-name>
+    <servlet-class>customerController.Controller</servlet-class>
+    <init-param>
+      <param-name>jdbcDriverName</param-name>
+      <param-value> com.mysql.jdbc.Driver  </param-value>
+    </init-param>
+    <init-param>
+      <param-name>jdbcURL</param-name>
+      <param-value> jdbc:mysql:///test     </param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cust-controller</servlet-name>
+    <url-pattern>    *.doc                     </url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>emp-controller</servlet-name>
+    <url-pattern>    *.doe                     </url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>/WEB-INF/index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
